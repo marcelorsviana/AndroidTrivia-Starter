@@ -73,7 +73,7 @@ CODELAB: Android Kotlin Fundamentals: 03.2 Define navigation paths - https://dev
 - How to create an options menu
 - How to create a navigation drawer
 
-</br>**What you did:**</br>
+</br>**What I did:**</br>
 
 - Create a navigation graph for the fragments using the navigation library and the Navigation Editor.
 - Create navigation paths in the app.
