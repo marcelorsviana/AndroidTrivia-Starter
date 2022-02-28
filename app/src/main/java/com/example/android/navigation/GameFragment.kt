@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -62,7 +63,8 @@ class GameFragment : Fragment() {
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
-    private val numQuestions = Math.min((questions.size + 1) / 2, 3)
+//    private val numQuestions = Math.min((questions.size + 1) / 2, 3) // Set the number os correct questions to 3 to win the game
+    private val numQuestions = 1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -102,7 +104,8 @@ class GameFragment : Fragment() {
                         // We've won!  Navigate to the gameWonFragment.
                         // Using directions to navigate to the GameWonFragment
                         view.findNavController()
-                            .navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment())
+                            .navigate(GameFragmentDirections
+                                .actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
